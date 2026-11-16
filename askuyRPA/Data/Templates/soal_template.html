@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>asKuy - Paket Latihan Mandiri</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1f2937;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+    .header {
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1d4ed8;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #6b7280;
+    }
+    .badge {
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid #bfdbfe;
+    }
+    .meta-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .meta-item strong {
+      color: #4b5563;
+    }
+    .instructions {
+      background: #fefce8;
+      border-left: 4px solid #eab308;
+      padding: 10px 14px;
+      margin-bottom: 24px;
+      font-size: 12px;
+      color: #713f12;
+      border-radius: 0 6px 6px 0;
+    }
+    .question-list {
+      margin-bottom: 30px;
+    }
+    .question-card {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed #e5e7eb;
+      page-break-inside: avoid;
+    }
+    .question-header {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .question-num {
+      background: #1e40af;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .question-subtopic {
+      font-size: 11px;
+      color: #6b7280;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .question-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: #111827;
+      margin-bottom: 10px;
+      padding-left: 2px;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      margin-left: 6px;
+    }
+    .option-item {
+      font-size: 13px;
+      color: #374151;
+      display: flex;
+      align-items: center;
+    }
+    .option-key {
+      display: inline-block;
+      width: 20px;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    .footer {
+      margin-top: 40px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 12px;
+      text-align: center;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .answer-key-section {
+      margin-top: 30px;
+      background: #fdf4ff;
+      border: 1px solid #f0abfc;
+      border-radius: 8px;
+      padding: 16px;
+      page-break-inside: avoid;
+    }
+    .answer-key-section h3 {
+      margin: 0 0 10px 0;
+      color: #86198f;
+      font-size: 14px;
+    }
+    .key-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .key-item {
+      background: #ffffff;
+      border: 1px solid #e879f9;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #701a75;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <div class="brand">asKuy 🚀</div>
+      <div class="subtitle">Personalized Weakness Booster & Practice Exam</div>
+    </div>
+    <div class="badge">Paket Latihan Mandiri</div>
+  </div>
+
+  <div class="meta-box">
+    <div class="meta-item"><strong>Job ID:</strong> {{JOB_ID}}</div>
+    <div class="meta-item"><strong>Siswa / User:</strong> {{USER_ID}}</div>
+    <div class="meta-item"><strong>Mata Pelajaran:</strong> Matematika</div>
+    <div class="meta-item"><strong>Fokus Materi:</strong> {{WEAK_TOPICS}}</div>
+    <div class="meta-item"><strong>Tingkat:</strong> Level {{TINGKAT}}</div>
+    <div class="meta-item"><strong>Tanggal Dibuat:</strong> {{GENERATED_DATE}}</div>
+  </div>
+
+  <div class="instructions">
+    📌 <strong>Petunjuk Pengerjaan:</strong> Paket latihan ini dikurasi otomatis khusus untuk memperkuat sub-bab yang menjadi titik lemahmu. Kerjakan setiap soal secara mandiri sebelum mencocokkannya dengan kunci jawaban di bagian akhir dokumen.
+  </div>
+
+  <div class="question-list">
+    {{QUESTIONS_HTML}}
+  </div>
+
+  <div class="answer-key-section">
+    <h3>🔑 Kunci Jawaban Singkat</h3>
+    <div class="key-grid">
+      {{ANSWER_KEYS_HTML}}
+    </div>
+  </div>
+
+  <div class="footer">
+    Dokumen ini di-generate otomatis oleh robot asKuy RPA & AI Service. Hak Cipta &copy; 2026 asKuy Platform.
+  </div>
+
+</body>
+</html>
