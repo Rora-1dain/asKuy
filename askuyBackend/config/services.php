@@ -35,4 +35,19 @@ return [
         ],
     ],
 
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
+    ],
+
+    'rpa' => [
+        'key' => env('RPA_API_KEY', 'askuy-rpa-secret-key-2026'),
+    ],
+
+    'fastapi' => [
+        'base_url' => env('FASTAPI_BASE_URL', 'http://localhost:8000'),
+        'timeout' => (int) env('FASTAPI_TIMEOUT', 20),
+    ],
+
 ];

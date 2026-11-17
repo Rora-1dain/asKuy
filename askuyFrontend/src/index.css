@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root { font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif; color-scheme: light; }
+.dark { color-scheme: dark; }
+body { margin: 0; min-width: 320px; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+
+.login-select option { background: #ffffff; color: #00022e; }
+.dark .login-select { color-scheme: dark; }
+.dark .login-select option { background: #050838; color: #ffffff; }
